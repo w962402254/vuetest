@@ -16,7 +16,6 @@
         </el-checkbox-group>
       </el-row>
 
-
       <el-row>
         <el-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">全选</el-checkbox>
 
@@ -39,35 +38,35 @@
     </div>
 </template>
 <script>
-  let cities = ['上海', '深圳', '北京', '广州'];
-  let choose = ['上海', '深圳'];
-  export default {
-    name: 'checkbox',
-    data () {
-      return {
-        checkbox: true,
-        checkboxButton: ['A', 'B'],
-        isIndeterminate: true,
-        checkAll: false,
-        checkBoxCities: choose,
-        checkBoxCities1: choose,
-        cities: cities,
-        max: parseInt(this.$route.query.max),
-        checkboxButtonList: choose
-      }
+let cities = ['上海', '深圳', '北京', '广州']
+let choose = ['上海', '深圳']
+export default {
+  name: 'checkbox',
+  data () {
+    return {
+      checkbox: true,
+      checkboxButton: ['A', 'B'],
+      isIndeterminate: true,
+      checkAll: false,
+      checkBoxCities: choose,
+      checkBoxCities1: choose,
+      cities: cities,
+      max: parseInt(this.$route.query.max),
+      checkboxButtonList: choose
+    }
+  },
+  methods: {
+    handleCheckAllChange (val) {
+      this.checkBoxCities = val ? cities : []
+      this.isIndeterminate = false
     },
-    methods: {
-      handleCheckAllChange (val) {
-        this.checkBoxCities = val ? cities : [];
-        this.isIndeterminate = false;
-      },
-      handleCheckedCitiesChange (val) {
-        let checkedCount = val.length;
-        this.checkAll = checkedCount === this.cities.length;
-        this.isIndeterminate = checkedCount > 0 && checkedCount < this.cities.length;
-      }
+    handleCheckedCitiesChange (val) {
+      let checkedCount = val.length
+      this.checkAll = checkedCount === this.cities.length
+      this.isIndeterminate = checkedCount > 0 && checkedCount < this.cities.length
     }
   }
+}
 </script>
 
 <style scoped>

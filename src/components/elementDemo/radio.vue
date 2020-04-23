@@ -29,16 +29,16 @@
 </template>
 
 <script>
-  export default {
-    name: 'radio',
-    data () {
-      return {
-        radio1: '1',
-        radio2: '3',
-        radio3: '深圳'
-      }
+export default {
+  name: 'radio',
+  data () {
+    return {
+      radio1: '1',
+      radio2: '3',
+      radio3: '深圳'
     }
   }
+}
 </script>
 
 <style scoped>

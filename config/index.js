@@ -11,11 +11,12 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      /*'/ssm': {
-        target: 'http://localhost:8081/ssm',
-        pathRewrite: {"^/ssm": ''},
+      '/api': {
+        target: 'http://127.0.0.1:8762',
+        pathRewrite: {"^/api": ''},
+        changeOrigin: true,
         secure: false
-      }*/
+      }
     },
 
     // Various Dev Server settings

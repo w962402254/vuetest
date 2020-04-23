@@ -20,7 +20,7 @@ const age = 26
 export default {
   name: 'App',
   methods: {
-    jump() {
+    jump () {
       this.$router.push({
         path: '/user',
         query: { age: age }
@@ -30,7 +30,6 @@ export default {
 }
 
 </script>
-
 
 <style>
 #app {

@@ -3,9 +3,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'cascader'
-  }
+export default {
+  name: 'cascader'
+}
 </script>
 
 <style scoped>

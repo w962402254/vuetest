@@ -17,15 +17,15 @@
 </template>
 
 <script>
-  export default {
-    name: 'elementDemo',
-    data () {
-      return {
-        type: ['info', 'primary', 'success', 'warning'],
-        size: ['medium', 'small', 'mini']
-      }
+export default {
+  name: 'elementDemo',
+  data () {
+    return {
+      type: ['info', 'primary', 'success', 'warning'],
+      size: ['medium', 'small', 'mini']
     }
   }
+}
 </script>
 
 <style scoped>

@@ -21,27 +21,26 @@
 
 </template>
 
-
 <script>
-  import Select from '@/components/elementDemo/select'
+import Select from '@/components/elementDemo/select'
 
-  export default {
-    name: 'tabs',
-    data () {
-      return {
-        activeName: 'second',
-        tabPosition: 'top'
-      }
-    },
-    methods: {
-      handleClick (tab, event) {
-        console.log(tab, event)
-      }
-    },
-    components: {
-      selectComponent: Select
+export default {
+  name: 'tabs',
+  data () {
+    return {
+      activeName: 'second',
+      tabPosition: 'top'
     }
+  },
+  methods: {
+    handleClick (tab, event) {
+      console.log(tab, event)
+    }
+  },
+  components: {
+    selectComponent: Select
   }
+}
 </script>
 
 <style lang="css" scoped>

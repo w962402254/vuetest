@@ -5,14 +5,14 @@
 </template>
 
 <script>
-  export default {
-    name: 'error',
-    data () {
-      return {
-        msg: 'Error 404'
-      }
+export default {
+  name: 'error',
+  data () {
+    return {
+      msg: 'Error 404'
     }
   }
+}
 </script>
 
 <style scoped>

@@ -60,7 +60,9 @@ export default new Router({
   }, {
     path: '*', component: Error
   }, {
-    path: '/elementDemo', component: ElementDemo, children: [{
+    path: '/elementDemo',
+    component: ElementDemo,
+    children: [{
       path: 'button/:buttonName/:color',
       component: Button
     }, {

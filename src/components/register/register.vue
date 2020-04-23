@@ -22,12 +22,12 @@ export default {
 
   name: 'register',
 
-  data() {
+  data () {
     let checkUsername = (rule, value, callback) => {
       if (!value) {
-        return callback(new Error('帐号不可为空！'));
+        return callback(new Error('帐号不可为空！'))
       } else if (value.length > 12 || value.length < 6) {
-        return callback(new Error('帐号长度 6 到 12 个字符'));
+        return callback(new Error('帐号长度 6 到 12 个字符'))
       } else {
         this.axios.post('/ssm/user/validateUsername', {
           username: value
@@ -37,25 +37,25 @@ export default {
           }
         })
       }
-      return callback();
+      return callback()
     }
 
     let checkRepeatPassword = (rule, value, callback) => {
-      if(this.registerForm.password !== value){
+      if (this.registerForm.password !== value) {
         return callback(new Error('密码不一致，请确认！'))
       }
-      return callback();
+      return callback()
     }
 
     let checkPassword = (rule, value, callback) => {
       if (!value) {
-        return callback(new Error('密码不可为空！'));
+        return callback(new Error('密码不可为空！'))
       } else if (value.length > 12 || value.length < 6) {
-        return callback(new Error('密码长度 6 到 12 个字符'));
-      } else if(! /^[A-za-z0-9]*$/.test(value)){
+        return callback(new Error('密码长度 6 到 12 个字符'))
+      } else if (!/^[A-za-z0-9]*$/.test(value)) {
         return callback(new Error('必须有大小写字符和数字组合'))
       }
-      return callback();
+      return callback()
     }
     return {
       registerForm: {
@@ -71,27 +71,27 @@ export default {
     }
   },
   methods: {
-    submitForm(formName) {
+    submitForm (formName) {
       this.$refs[formName].validate((v, bf) => {
         if (v) {
           this.$message({
             message: '注册成功！即将调整至登录界面'
           })
-          let $this = this;
+          let $this = this
           setTimeout(function () {
             $this.$router.push({
               path: '/'
             })
           }, 1000)
         } else {
-          console.log('error submit!!');
-          return false;
+          console.log('error submit!!')
+          return false
         }
       })
     },
-    resetForm(formName) {
+    resetForm (formName) {
       // document.getElementsByTagName('form').resetFields();
-      this.$refs[formName].resetFields();
+      this.$refs[formName].resetFields()
     }
   }
 }

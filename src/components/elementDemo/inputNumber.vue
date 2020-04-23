@@ -12,26 +12,25 @@
   </div>
 </template>
 
-
 <script>
-  export default {
-    data () {
-      return {
-        num: 1
-      }
+export default {
+  data () {
+    return {
+      num: 1
+    }
+  },
+  methods: {
+    handleChange (value) {
+      console.log(value)
     },
-    methods: {
-      handleChange (value) {
-        console.log(value)
-      },
-      focus () {
-      	console.log('得到焦点');
-      },
-      blur () {
-        console.log('失去焦点');
-      }
+    focus () {
+      	console.log('得到焦点')
+    },
+    blur () {
+      console.log('失去焦点')
     }
   }
+}
 </script>
 
 <style scoped>

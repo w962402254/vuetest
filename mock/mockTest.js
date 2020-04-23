@@ -1,6 +1,6 @@
 const Mock = require('mockjs') // 获取mock对象
 const Random = Mock.Random // 获取random对象，随机生成各种数据，具体请翻阅文档
-const domain = 'http://localhost:8080/ssm' // 定义默认域名，随便写
+const domain = 'http://localhost:8080/api' // 定义默认域名，随便写
 const code = 200 // 返回的状态码
 Mock.setup({
   timeout: 100
@@ -8,7 +8,6 @@ Mock.setup({
 
 // 随机生成文章数据
 const postData = req => {
-
   console.log(req) // 请求体，用于获取参数
 
   let posts = [] // 用于存放文章数据的数组
@@ -32,8 +31,8 @@ const postData = req => {
 }
 
 const loginData = req => {
-  let body = JSON.parse(req.body);
-  document.cookie = 'username=' + body.username;
+  let body = JSON.parse(req.body)
+  document.cookie = 'username=' + body.username
   return {
     code: 404,
     msg: '成功！'
@@ -42,13 +41,13 @@ const loginData = req => {
 
 const validateUsername = req => {
   let body = JSON.parse(req.body)
-  if(body.username === '123456'){
+  if (body.username === '123456') {
     return {
       success: false
     }
   }
   return {
-      success: true
+    success: true
   }
 }
 
@@ -57,5 +56,4 @@ Mock.mock(`${domain}/getPosts`, 'get', postData)
 
 Mock.mock(`${domain}/validateUser`, 'post', loginData)
 
-Mock.mock(`${domain}/user/validateUsername`, 'post', validateUsername)
-
+Mock.mock(`${domain}/vueTest/login`, 'post', validateUsername)

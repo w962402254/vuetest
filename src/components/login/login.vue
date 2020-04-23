@@ -18,7 +18,7 @@
 export default {
 
   name: 'login',
-  data() {
+  data () {
     return {
       loginForm: {
         username: 'wzq',
@@ -27,43 +27,41 @@ export default {
     }
   },
   methods: {
-    login() {
-
-      this.axios.post('/ssm/validateUser', {
+    login () {
+      this.axios.post('api/vueTest/login', {
         params: {
           username: this.loginForm.username,
           password: this.loginForm.password
         }
       })
         .then(res => {
-          if(res.data.success){
+          if (res.data.success) {
             this.$router.push({
               path: '/elementDemo/elementButton'
             })
-            return;
+            return
           }
           this.$message({
             message: res.data.msg,
             type: 'warning'
-          });
-
+          })
         })
-        .catch(err => {
+        .catch(() => {
           this.$message({
             message: '服务器出错!',
             type: 'warning'
-          });
+          })
         })
     },
-    getPosts() {
+    getPosts () {
       this.axios.get('/ssm/getPosts').then(res => {
         console.log(res)
       })
     },
-    goRegister() {
-    	this.$router.push({
+    goRegister () {
+      this.$router.push({
         path: '/register'
-      });
+      })
     }
   },
   computed: {
@@ -75,7 +73,6 @@ export default {
 }
 
 </script>
-
 
 <style lang="css" scoped>
 </style>

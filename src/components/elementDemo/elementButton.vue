@@ -38,21 +38,21 @@
 </template>
 
 <script>
-  export default {
-    name: 'elementButton',
-    methods: {
-      goLoading () {
-        this.axios({
-          method: 'get',
-          url: '/ssm/student/testWebpack/20'
-        }).then(response => {
-          alert(response.data.age)
-        }).catch(err => {
-          alert('服务器出错');
-        })
-      }
+export default {
+  name: 'elementButton',
+  methods: {
+    goLoading () {
+      this.axios({
+        method: 'get',
+        url: '/ssm/student/testWebpack/20'
+      }).then(response => {
+        alert(response.data.age)
+      }).catch(err => {
+        alert('服务器出错')
+      })
     }
   }
+}
 </script>
 
 <style scoped>
