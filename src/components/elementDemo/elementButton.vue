@@ -47,7 +47,7 @@ export default {
         url: '/ssm/student/testWebpack/20'
       }).then(response => {
         alert(response.data.age)
-      }).catch(err => {
+      }).catch(() => {
         alert('服务器出错')
       })
     }

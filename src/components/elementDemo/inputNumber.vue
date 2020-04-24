@@ -24,7 +24,7 @@ export default {
       console.log(value)
     },
     focus () {
-      	console.log('得到焦点')
+      console.log('得到焦点')
     },
     blur () {
       console.log('失去焦点')

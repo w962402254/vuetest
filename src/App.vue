@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-     <h1>首页</h1>
+     <h1>{{ $store.state.count }}</h1>
     <router-link to="/">Go to HelloWorld</router-link>&nbsp;
     <router-link to="/user?age=27">Go to User</router-link>&nbsp;
     <router-link to="/goUser?age=100">别名</router-link>
@@ -8,6 +8,8 @@
     <router-link to="/dfsafd">跳转404</router-link>
     <router-link to="/elementDemo/button/button1/red">Go to Button</router-link>
     <button @click="jump">跳转user页面</button>
+    <button @click="add">测试1</button>
+    <button @click="addParam(100)">测试2</button>
 
     <router-link to="/elementDemo">Go to elementDemo</router-link>
     <router-view/>
@@ -15,6 +17,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 const name = 'wzq'
 const age = 26
 export default {
@@ -25,7 +28,14 @@ export default {
         path: '/user',
         query: { age: age }
       })
-    }
+    },
+    ...mapMutations([
+        'add',
+        'addParam'
+      ])
+  },
+  computed: {
+
   }
 }
 
